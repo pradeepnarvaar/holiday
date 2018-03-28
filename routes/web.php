@@ -18,14 +18,21 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 Route::get('/user', function () {
-    return view('admin.user');
+    return view('admin.users.user');
 });
 Route::get('/shoping', function () {
     return view('admin.shoping');
 });
 Route::get('/product', function () {
-    return view('admin.product');
+    return view('admin.products.product');
 });
 Route::get('/membership', function () {
-    return view('admin.membership');
+    return view('admin.membership.usermember');
+});
+
+Route::get('/add', function () {
+    return view('admin.add');
+});
+Route::get('/booking', function () {
+    return view('admin.book_details.booking');
 });

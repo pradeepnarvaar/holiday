@@ -9,9 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Holiday club</title>
 
     <!-- Bootstrap Core CSS -->
+
+   
+
+  
+
+    <!-- DataTables CSS -->
+    <link href="<?php echo e(URL::asset('admin/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="<?php echo e(URL::asset('admin/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
+
     <link href="<?php echo e(URL::asset('admin/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
