@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
+use App\admin;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class adminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('admin/book_details/booking');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show(admin $admin)
     {
         //
     }
@@ -52,10 +52,10 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit(admin $admin)
     {
         //
     }
@@ -64,10 +64,10 @@ class BookingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $booking
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, admin $admin)
     {
         //
     }
@@ -75,10 +75,10 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy(admin $admin)
     {
         //
     }

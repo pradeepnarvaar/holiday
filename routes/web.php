@@ -10,6 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'web'], function () {
+    // Frontend
+    Route::auth();
+
+   Route::get('/home', 'HomeController@index');
+
+    Route::resource('posts', 'PostController');
+
+    //Backend
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    // Matches The "/admin/ControllerName" URL
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'adminProtect'], function()
+    {
+        Route::get('booking', 'BookingController@index');
+    });
+});
 
 Route::get('/', function () {
     return view('admin.login');
@@ -36,3 +52,8 @@ Route::get('/add', function () {
 Route::get('/booking', function () {
     return view('admin.book_details.booking');
 });
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
+});
+Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
