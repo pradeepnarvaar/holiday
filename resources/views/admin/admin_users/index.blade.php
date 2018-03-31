@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">The Holidays Club</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -232,9 +232,7 @@
 
          <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header"><a href="{{url('add')}}">Add</a></h3>
-                </div>
+               
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
@@ -242,53 +240,46 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
+                           
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <div class="pre-scrollable">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
-                                        <th></th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>DSA Name</th>
+                                        <th>Emil-ID</th>
+                                        <th>Phone No.</th>
+                                        <th>Role</th>
+                                        <th>Location</th>
+                                        
+                                        <th>Action</th>
+                                       
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
+                                    <?php foreach($admins as $admin){?>
                                     <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                       <td></td>
+                                        <td><?= $admin->name;?></td>
+                                         <td><?= $admin->email;?></td>
+                                         <td><?= $admin->phone;?></td>
+                                         <td></td>
+                                         <td></td>
+                                         
+                                         
+
+                                        <td><a  class="fa fa-pencil" href="{{url('/adminuser/edit-admin')}}/<?= $admin->id;?>"></a>&nbsp;&nbsp;&nbsp;<a class="fa fa-trash" href=""></a></td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                   
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
+
                             </table>
-                            <!-- /.table-responsive -->
+                            </div><!-- /.table-responsive -->
                             
                         </div>
                         <!-- /.panel-body -->
@@ -298,6 +289,75 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <!-- model -->
+            <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                           
+                            <h4 class="modal-title">Add Admin</h4>
+                          </div>
+                          <div class="modal-body">
+                       
+                        
+                                    <form role="form">
+                                        <?php echo csrf_field();?>
+                                        <div class="form-group">
+                                            <label>DSA Name</label>
+                                            <input class="form-control" placeholder="Enter DSA Name">
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email-ID</label>
+                                            <input class="form-control" placeholder="Enter Email-Id">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirm-Password</label>
+                                            <input class="form-control" placeholder="Confirm-Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mobile No.</label>
+                                            <input class="form-control" placeholder="Enter text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Role</label>
+                                            <select class="form-control" placeholder="Enter text">
+                                                <option>Please Select Role</option>
+                                                <?php foreach($roles as $role){?>
+                                                <option value="<?php echo $role->roleId?>"><?php echo $role->role?></option><?php }?>
+                                        </select></div>
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <select  class="form-control" placeholder="Enter text">
+                                                <option>Please Select</option>
+                                                <?php foreach($locations as $location){ ?>
+                                                <option value="<?php echo $location->id;?>"><?php echo $location->locationName;?></option>
+                                                <?php }?>
+                                            </select>
+                                        </div>
+                                
+                                       
+                                        <button type="submit" class="btn btn-info" name="submit">Submit</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        
+                                    </form>
+                                
+                 
+                         
+                          <div class="modal-footer">
+                            
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+            <!-- close -->
             
             <!-- /.row -->
         </div>

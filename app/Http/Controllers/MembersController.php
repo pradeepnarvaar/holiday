@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class MembersController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class MembersController extends Controller
      */
     public function index()
     {
-        //
+        $members= DB::table('tbl_member_datas')->get();
+         return view('admin.members.index', ['members' => $members]);
     }
 
     /**

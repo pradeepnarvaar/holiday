@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">The Holidays Club</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -246,49 +246,33 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <div class="pre-scrollable">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>#</th>
+                                        <th>Location</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
+                                    <?php foreach($locations as $location){?>
                                     <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                       <td></td>
+                                        
+                                         <td><?= $location->locationName;?></td>
+                                         <td><?= $location->status;?></td>
+                                        
+                                        <td><a  class="fa fa-pencil" href="{{url('/member/edit')}}/<?= $location->id;?>"></a>&nbsp;&nbsp;&nbsp;<a class="fa fa-trash" href=""></a></td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                   
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
+
                             </table>
-                            <!-- /.table-responsive -->
+                            </div><!-- /.table-responsive -->
                             
                         </div>
                         <!-- /.panel-body -->

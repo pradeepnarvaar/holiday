@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Users;
+use DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,11 +13,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+  public function index()
     {
-        //
-    }
+         $users = DB::table('users')->get();
 
+        return view('admin.users.user', ['users' => $users]);
+    }
     /**
      * Show the form for creating a new resource.
      *

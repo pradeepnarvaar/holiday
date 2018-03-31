@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class LocationsController extends Controller
      */
     public function index()
     {
-        //
+        $locations = DB::table('tbl_locations')->get();
+        return view('admin.location.index',compact('locations'));
     }
 
     /**

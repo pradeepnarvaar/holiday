@@ -8,12 +8,12 @@
                             <a href="{{url('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{url('/user')}}"><i class="fa fa-user"></i> Admin User</a>
+                            <a href="{{url('/adminuser')}}"><i class="fa fa-user"></i> Admin User</a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="{{url('/user')}}"><i class="fa fa-users"></i> Members</a>
+                            <a href="{{url('/member')}}"><i class="fa fa-users"></i> Members</a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -28,25 +28,30 @@
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="{{url('/user')}}"><i class="fa fa-map-marker"></i> Locations<span class="fa arrow"></span></a>
+                            <a href="{{url('/location')}}"><i class="fa fa-map-marker"></i> Locations<span class="fa arrow"></span></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="{{url('/user')}}"><i class="fa fa-credit-card"></i> Payment Update</a>
+                            <a href="{{url('/voucher')}}"><i class="fas fa-tags"></i> Voucher</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="{{url('/payment')}}"><i class="fa fa-credit-card"></i> Payment Update</a>
                             
                             <!-- /.nav-second-level -->
                         </li>
 
                         <li>
-                            <a href="{{url('/product')}}"><i class="fa fa-cc-mastercard"></i> AMC Update</a>
+                            <a href="{{url('/amc-update')}}"><i class="fa fa-cc-mastercard"></i> AMC Update</a>
                         </li>
 
                         <li>
                             <a href="{{url('/product')}}"><i class="fa fa-cogs"></i> Configuration</a>
                         </li>
                         <li>
-                            <a href="{{url('/product')}}"><i class="fa fa-envelope-square"></i>
+                            <a href="{{url('/holiday-request-get-all-details')}}"><i class="fa fa-envelope-square"></i>
  Holidays Request</a>
                         </li>
                         <li>

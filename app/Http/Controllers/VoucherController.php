@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class HolidayController extends Controller
+class VoucherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class HolidayController extends Controller
      */
     public function index()
     {
-       $holiday_requests= DB::table('tbl_bookings')->get();
-       return view('admin.holiday_request.index',compact('holiday_requests'));
+        $vouchers= DB::table('giftvouchers')->get();
+       return view('admin.vouchers.index',compact('vouchers'));
     }
 
     /**

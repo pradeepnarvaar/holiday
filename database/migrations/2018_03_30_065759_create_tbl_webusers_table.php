@@ -21,6 +21,7 @@ class CreateTblWebusersTable extends Migration
             $table->integer('phone');
             $table->string('password');
             $table->integer('status');
+            $table->string('role');
             $table->timestamps();
         });
     }

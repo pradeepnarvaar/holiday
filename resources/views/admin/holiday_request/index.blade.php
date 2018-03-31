@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">The Holidays Club</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -246,49 +246,46 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <div class="pre-scrollable">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
-                                        <th></th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>Membership ID</th>
+                                        <th>Check In Date</th>
+                                        <th>Check Out Date</th>
+                                        <th>Location</th>
+                                        <th>Total Person</th>
+                                        <th>Apartment</th>
+                                        <th>Total Days</th>
+                                          <th>Action</th>
+                                        
+                                       
                                     </tr>
                                 </thead>
+                                    
                                 <tbody>
+                                    <?php $i=1; foreach($holiday_requests as $holiday_request){?>
                                     <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                       <td><?= $i++; ?></td>
+                                       <td><?= $holiday_request->member_id;?></td>
+                                        <td><?= $holiday_request->checkindate;?></td>
+                                         <td><?= $holiday_request->checkoutdate;?></td>
+                                         <td><?= $holiday_request->city ;?></td>
+                                         <td></td>
+                                         <td><?= $holiday_request->studio?></td>
+                                          <td><?= $holiday_request->tot_day?></td>
+                                         
+                                         
+                                         
+
+                                        <td><a  class="fa fa-pencil" href="{{url('/holiday-request-get-all-details/edit')}}/<?= $holiday_request->id;?>"></a>&nbsp;&nbsp;&nbsp;<a class="fa fa-trash" href=""></a></td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                   
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
+
                             </table>
-                            <!-- /.table-responsive -->
+                            </div><!-- /.table-responsive -->
                             
                         </div>
                         <!-- /.panel-body -->

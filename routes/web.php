@@ -28,34 +28,18 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::get('/role','RolesController@index')->name('index');
+Route::get('/member','MembersController@index')->name('index');
+Route::get('/location','LocationsController@index')->name('index');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-Route::get('/user', function () {
-    return view('admin.users.user');
-});
-Route::get('/shoping', function () {
-    return view('admin.shoping');
-});
-Route::get('/product', function () {
-    return view('admin.products.product');
-});
-Route::get('/membership', function () {
-    return view('admin.membership.usermember');
-});
+Route::get('/adminuser','AdminController@index')->name('index');
+Route::get('/adminuser/add-admin','AdminController@create')->name('create');
+Route::get('/adminuser/edit-admin/{id}','AdminController@edit')->name('edit');
 
-Route::get('/add', function () {
-    return view('admin.add');
-});
-Route::get('/booking', function () {
-    return view('admin.book_details.booking');
-});
+Route::get('/payment','PaymentController@index')->name('index');
+Route::get('/holiday-request-get-all-details','HolidayController@index')->name('index');
 
-//Route::group(['middleware'=>'auth'], function(){
-   // Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
-//});
-//Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
+Route::get('/voucher','VoucherController@index')->name('index');
+
 
 Auth::routes();
 

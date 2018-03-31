@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">The Holidays Club</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -233,7 +233,7 @@
          <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><a href="{{url('add')}}">Add</a></h3>
+                    
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -242,53 +242,48 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                           
+                           <a class="btn btn-primary" href="{{url('add')}}">ADD Voucher</a>
+               
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <div class="pre-scrollable">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
+
                                     <tr>
                                         <th>#</th>
+                                        <th>Voucher Code</th>
                                         <th>Name</th>
-                                        <th></th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>Date of Generation</th>
+                                        <th>Expiration Date</th>
+                                        <th>Manager Name</th>
+                                        <th>Venue</th>
+                                          <th>Action</th>
+                                        
+                                       
                                     </tr>
                                 </thead>
+                                  
                                 <tbody>
+                                    <?php $i=1; foreach($vouchers as $voucher){?>
                                     <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                       <td><?= $i++; ?></td>
+                                       <td><?= $voucher->voucher_code;?></td>
+                                        <td><?= $voucher->name;?></td>
+                                         <td><?= $voucher->date_of_generation;?></td>
+                                         <td><?= $voucher->expiration_date ;?></td>
+                                         <td><?= $voucher->dsaName ;?></td>
+                                         <td><?= $voucher->location_id?></td>
+                                         
+                                        <td><a  class="fa fa-pencil" href="{{url('/holiday-request-get-all-details/edit')}}/<?= $voucher->id;?>"></a>&nbsp;&nbsp;&nbsp;<a class="fa fa-trash" href=""></a></td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                   
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
+
                             </table>
-                            <!-- /.table-responsive -->
+                            </div><!-- /.table-responsive -->
                             
                         </div>
                         <!-- /.panel-body -->

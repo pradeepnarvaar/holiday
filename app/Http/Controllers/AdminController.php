@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Admin;
 
 class AdminController extends Controller
 {
@@ -13,7 +15,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $admins= DB::table('tbl_webusers')->get();
+        $roles=DB::table('tbl_roles')->get();
+        $locations=DB::table('tbl_locations')->get();
+        $arrayName = array('roles' => $roles, 'locations'=>$locations,'admins'=>$admins,);
+        return view('admin.admin_users.index')->with($arrayName);
     }
 
     /**
@@ -23,7 +29,10 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $roles=DB::table('tbl_roles')->get();
+        $locations=DB::table('tbl_locations')->get();
+        $arrayName = array('roles' => $roles, 'locations'=>$locations);
+        return view('admin.admin_users.add')->with($arrayName);
     }
 
     /**
@@ -56,7 +65,13 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+         
+        $update_admins = Admin::find($id)->get();
+
+        $roles=DB::table('tbl_roles')->get();
+        $locations=DB::table('tbl_locations')->get();
+        $arrayName = array('roles' => $roles, 'locations'=>$locations,'update_admins'=>$update_admins);
+        return view('admin.admin_users.edit')->with($arrayName);
     }
 
     /**

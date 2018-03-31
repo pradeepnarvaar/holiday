@@ -13,7 +13,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('admin.role.index');
+        $roles= Roles::all();
+        return view('admin.role.index',compact('roles'));
     }
 
     /**

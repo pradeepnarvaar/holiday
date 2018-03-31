@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">The Holidays Club</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -246,49 +246,67 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <div class="pre-scrollable">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
-                                        <th></th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>Membership ID</th>
+                                        <th>Main Applicant Name</th>
+                                        <th>Co-Applicant Name</th>
+                                        <th>Location</th>
+                                        <th>Date of Joining</th>
+                                        <th>Date of Validity</th>
+                                        <th>Tenure</th>
+                                        <th>Card Type(Season)</th>
+                                        <th>Aparment</th>
+                                        <th>Occupancy</th>
+                                        <th>Purchase Amount</th>
+                                        <th>Admin Amount</th>
+                                        <th>Total Amount</th>
+                                        <th>Initial Amount</th>
+                                        <th>Balance Amount</th>
+                                        <th>Mode of Payment</th>
+                                        <th>Executive Name</th>
+                                        <th>Manager Name</th>
+                                        <th>Extra Offer</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
+                                    <?php foreach($members as $member){?>
                                     <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                       <td></td>
+                                        <td><?= $member->memberShipid;?></td>
+                                         <td><?= $member->m_name;?></td>
+                                         <td><?= $member->c_name;?></td>
+                                         <td><?= $member->city;?></td>
+                                         <td><?= $member->doj;?></td>
+                                         <td><?= $member->vdate;?></td>
+                                         <td><?= $member->tenure;?></td>
+                                         <td><?= $member->ctype;?></td>
+                                         <td><?= $member->apartment;?></td>
+                                         <td><?= $member->occupancy;?></td>
+                                         <td><?= $member->purchase_amount;?></td>
+                                         <td><?= $member->admin_amount;?></td>
+                                         <td><?= $member->total_amount;?></td>
+                                         <td><?= $member->initial_payment;?></td>
+                                         <td><?= $member->bal_payment;?></td>
+                                         <td><?= $member->mode_of_payment_details;?></td>
+                                         <td><?= $member->excutive_name;?></td>
+                                         <td><?= $member->manager_name;?></td>
+                                         <td><?= $member->member_offer;?></td>
+                                         
+
+                                        <td><a  class="fa fa-pencil" href="{{url('/member/edit')}}/<?= $member->memberShipid;?>"></a>&nbsp;&nbsp;&nbsp;<a class="fa fa-trash" href=""></a></td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                   
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
+
                             </table>
-                            <!-- /.table-responsive -->
+                            </div><!-- /.table-responsive -->
                             
                         </div>
                         <!-- /.panel-body -->

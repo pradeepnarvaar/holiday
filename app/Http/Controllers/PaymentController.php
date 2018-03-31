@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class PaymentController extends Controller
 {
@@ -13,7 +14,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $payments = DB::table('tbl_paymentdetails')->get();
+        return view('admin.payment.index',compact('payments'));
     }
 
     /**
