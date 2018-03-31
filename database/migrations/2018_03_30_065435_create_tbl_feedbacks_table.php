@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateTblFeedbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tbl_feedbacks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('review');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('rdate');
+
             $table->timestamps();
         });
     }
@@ -26,11 +26,11 @@ class CreateUsersTable extends Migration
     /**
      * Reverse the migrations.
      *
+     *`(`id`, `review`, `name`, `rdate`)
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tbl_feedbacks');
     }
-    
 }

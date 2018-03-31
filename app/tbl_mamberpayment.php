@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class admin extends Model
+class tbl_mamberpayment extends Model
 {
      /**
      * The attributes that are mass assignable.

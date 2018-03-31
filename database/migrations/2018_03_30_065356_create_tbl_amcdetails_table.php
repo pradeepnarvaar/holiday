@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateTblAmcdetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,27 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tbl_amcdetails', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('txn_id');
+            $table->string('member_id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('email');
+            $table->integer('mobile');
+            $table->date('year');
+
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     * (`id`, `txn_id`, `member_id`, `name`, `email`, `mobile`, `year`) 
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tbl_amcdetails');
     }
-    
 }

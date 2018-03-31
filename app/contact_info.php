@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class admin extends Model
+class contact_info extends Model
 {
-     /**
+	 /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -23,4 +23,5 @@ class admin extends Model
     protected $hidden = [
         'password', 'remember_token',
     ];
-}
+ }
+

@@ -27,9 +27,8 @@ Route::group(['middleware' => 'web'], function () {
     });
 });
 
-Route::get('/', function () {
-    return view('admin.login');
-});
+Route::get('/role','RolesController@index')->name('index');
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
@@ -53,7 +52,11 @@ Route::get('/booking', function () {
     return view('admin.book_details.booking');
 });
 
-Route::group(['middleware'=>'auth'], function(){
-    Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
-});
-Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
+//Route::group(['middleware'=>'auth'], function(){
+   // Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
+//});
+//Route::get('dashboard', array('as'=>'dashboard', 'uses'=>'DashboardController@getDashboard'));
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -77,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapApiRoutes()
+    protected function mapAdminRoutes()
     {
         Route::prefix('admin')
              ->middleware('admin')

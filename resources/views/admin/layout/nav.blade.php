@@ -1,55 +1,64 @@
  <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
+                           
                             <!-- /input-group -->
                         </li>
                         <li>
                             <a href="{{url('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> User<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{url('/user')}}">User</a>
-                                </li>
-                                
-                            </ul>
+                            <a href="{{url('/user')}}"><i class="fa fa-user"></i> Admin User</a>
+                            
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="{{url('/product')}}"><i class="fa fa-table fa-fw"></i> Product</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/shoping')}}"><i class="fa fa-edit fa-fw"></i> Shoping</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Member Ship User<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{url('/membership')}}">Member Ship</a>
-                                </li>
-                               
-                            </ul>
+                         <li>
+                            <a href="{{url('/user')}}"><i class="fa fa-users"></i> Members</a>
+                            
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i>Booking Details<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{url('/booking')}}">Booking</a>
-                                </li>
-                               
-                            </ul>
+                         <li>
+                            <a href="{{url('/role')}}"><i class="fa fa-male"></i> User Roles</a>
+                            
                             <!-- /.nav-second-level -->
                         </li>
+                         <li>
+                            <a href="{{url('/user')}}"><i class="fa fa-sticky-note-o"></i> Permissions<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="{{url('/user')}}"><i class="fa fa-map-marker"></i> Locations<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="{{url('/user')}}"><i class="fa fa-credit-card"></i> Payment Update</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-cc-mastercard"></i> AMC Update</a>
+                        </li>
+
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-cogs"></i> Configuration</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-envelope-square"></i>
+ Holidays Request</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-comments "></i> Chatting</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-table fa-fw"></i> Export Data</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/product')}}"><i class="fa fa-commenting-o"></i> Feedback</a>
+                        </li>
+                
                         
                     </ul>
                 </div>
