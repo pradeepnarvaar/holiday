@@ -55,7 +55,7 @@
  Holidays Request</a>
                         </li>
                         <li>
-                            <a href="{{url('/product')}}"><i class="fa fa-comments "></i> Chatting</a>
+                            <a href="{{url('/chatting')}}"><i class="fa fa-comments "></i> Chatting</a>
                         </li>
                         <li>
                             <a href="{{url('/product')}}"><i class="fa fa-table fa-fw"></i> Export Data</a>

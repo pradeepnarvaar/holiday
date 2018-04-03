@@ -317,8 +317,10 @@ class ComposerStaticInit6045d810f8ddaa3f60c59fcda37b493a
     );
 
     public static $classMap = array (
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\HolidayRequest' => __DIR__ . '/../..' . '/app/HolidayRequest.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -340,6 +342,7 @@ class ComposerStaticInit6045d810f8ddaa3f60c59fcda37b493a
         'App\\Http\\Controllers\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RolesController.php',
         'App\\Http\\Controllers\\ShopingController' => __DIR__ . '/../..' . '/app/Http/Controllers/ShopingController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\VoucherController' => __DIR__ . '/../..' . '/app/Http/Controllers/VoucherController.php',
         'App\\Http\\Controllers\\adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/adminController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/admin.php',
@@ -349,6 +352,10 @@ class ComposerStaticInit6045d810f8ddaa3f60c59fcda37b493a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\web' => __DIR__ . '/../..' . '/app/Http/Middleware/web.php',
+        'App\\Locations' => __DIR__ . '/../..' . '/app/Locations.php',
+        'App\\Members' => __DIR__ . '/../..' . '/app/Members.php',
+        'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
+        'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -356,6 +363,7 @@ class ComposerStaticInit6045d810f8ddaa3f60c59fcda37b493a
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Roles' => __DIR__ . '/../..' . '/app/Roles.php',
         'App\\Users' => __DIR__ . '/../..' . '/app/Users.php',
+        'App\\Voucher' => __DIR__ . '/../..' . '/app/Voucher.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',

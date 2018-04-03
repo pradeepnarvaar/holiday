@@ -27,6 +27,7 @@ Route::group(['middleware' => 'web'], function () {
     });
 });
 
+
 Route::get('/role','RolesController@index')->name('index');
 Route::get('/member','MembersController@index')->name('index');
 Route::get('/location','LocationsController@index')->name('index');
@@ -44,3 +45,5 @@ Route::get('/voucher','VoucherController@index')->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/chatting', 'ChatController@index')->name('index');
